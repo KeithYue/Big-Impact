@@ -1,0 +1,30 @@
+.well
+  .inner
+    .head
+      span.left
+        h2
+          |offers
+      span.right.createButton
+        button.btn.btn-primary(href="") Create
+    ul.nav.nav-tabs
+      li: a(href="") Most Recent
+      li: a(href="") Most Followed
+    .list
+      each offer in offers
+        .item
+          .info.left
+            img(src="http://placehold.it/60x60",alt='photo')
+            p.inf swan
+              br 
+              |2012-6-25
+           .offer.left
+              .titlehd
+                .title.left
+                  a(href="") title
+                .right.deleteButton
+                  button.close x
+              .content
+                p.inf content
+    .add
+      span.right
+        a.more(href="") More...
