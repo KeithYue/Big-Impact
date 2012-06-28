@@ -1,1 +1,49 @@
 h3 Contact Information
+table.table.table-condensed.table-striped
+  thead.span8
+    tr
+      td
+      td
+      td
+      td
+        if fellow_id == window.model.fellow.attributes.fellow_id
+          a.edit(href="#") Edit
+  tbody
+    tr
+      th Country code
+      td
+      td
+      td= mobile_country_code
+    tr
+      th Mobile phone
+      td
+      td
+      td= mobile
+    tr
+      th Mail(Home)
+      td
+        | #{home_street}
+        br
+        | #{home_city} 
+        br
+        | #{home_state} 
+        br
+        | #{home_country} 
+        br
+        | #{home_zip}
+      th Mail(Business)
+      td 
+        | #{business_street} 
+        br
+        | #{business_city}
+        br
+        | #{business_state} 
+        br
+        | #{business_country}
+        br
+        | #{business_zip}
+    tr
+      th Skype ID
+      td
+      td
+      td= skype_id

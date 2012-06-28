@@ -29,7 +29,7 @@ class window.Model.NavBarItem extends Backbone.Model
 
 class window.Model.Fellow extends Backbone.Model
   urlRoot: '/fellow/'
-  idAttribute: 'url_token'
+  idAttribute: 'fellow_id'
   initialize: (callback) =>
     @fetch
       success: =>
@@ -42,7 +42,9 @@ class window.Model.Fellow extends Backbone.Model
         
 class window.Model.NormalFellow extends Backbone.Model
   urlRoot: '/fellow/'
-  idAttribute: 'url_token'
+  idAttribute: 'fellow_id'
+  get_frendly_name: =>
+    "#{@get('first_name')} #{@get('last_name')}"
   
   
 # TODO: use session for auth
@@ -56,3 +58,15 @@ class window.Model.Offer extends Backbone.Model
     "#{date.getFullYear()}-#{date.getMonth() + 1}-#{date.getDate()}"
   get_fullname: =>
     "#{@attributes.author_first_name} #{@attributes.author_last_name}"
+  get_author_img:(callback) =>
+    @author = new Model.NormalFellow
+      fellow_id: @get('author_id')
+    @author.fetch 
+      success: =>
+        @authImg=@author.attributes.img
+        console.log @authImg
+        callback?()
+      error: =>
+        #默认图片
+        @authImg='http://www.gravatar.com/avatar/c53c03a085128f11f90ec17f84c88c15'
+        callback?()

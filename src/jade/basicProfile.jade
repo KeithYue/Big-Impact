@@ -4,7 +4,8 @@ table.table.table-condensed.table-striped
     tr
       td
       td
-        a.edit(href="#") edit
+        if fellow_id == window.model.fellow.attributes.fellow_id
+          a.edit(href="#") Edit
   tbody
     tr
       th First Name

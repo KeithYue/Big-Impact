@@ -39,7 +39,7 @@ class window.View.Index extends Backbone.View
         else
             #建立当前用户
           window.model.fellow = new Model.Fellow =>
-            router.navigate 'profile', true
+            router.navigate "profile/#{window.model.fellow.attributes.fellow_id}", true
         view.message.success 'Login success!'
       error: (xhr, status, error) =>
         console.log error

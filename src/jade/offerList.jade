@@ -11,7 +11,7 @@
         .item(data-id="#{offer.attributes.offer_id}")
           .info.left
             a.thumbnail(href="#profile/#{offer.attributes.author_id}")
-              img(src="public/img/60.gif",alt='photo')
+              img(src="#{offer.authImg}",alt='photo')
             p.inf= offer.get_fullname()
               br
               | #{offer.get_friendly_time()}

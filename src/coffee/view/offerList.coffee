@@ -3,7 +3,9 @@ class window.View.OfferList extends Backbone.View
   el: '#feedsContent'
   initialize: =>
     @offers = window.collection.offerlist = new Collection.OfferList =>
-      @render()
+      @offers.each (offer)=>
+        offer.get_author_img =>
+          @render()
     @offers.on 'remove', (offer, offers) =>
       offer.destroy
         success: =>

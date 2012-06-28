@@ -4,7 +4,9 @@
       .row
         .span
           a(href="#")
-            img(src="public/img/60.gif")
+            img(src="#{window.model.fellow.attributes.img}")
+          strong
+            |#{window.model.fellow.attributes.first_name}
     .well
       ul.nav.nav-tabs.nav-stacked
         //li

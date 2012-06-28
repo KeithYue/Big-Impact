@@ -96,16 +96,14 @@ class window.View.Profile extends Backbone.View
   initialize: (options)=>
     if options.fellow_id
       @model = new Model.NormalFellow
-        url_token: options.fellow_id
+        fellow_id: options.fellow_id
       @model.fetch
         success: =>
           @render()
-    else
-      @model = window.model.fellow 
-      @render()
   template: Template.profile
   render: =>
     @$el.html @template()
     @basicProfile = new View.BasicProfile @model
     @contactProfile = new View.ContactProfile @model
+    @relationShip = new View.Relationship @model
     @

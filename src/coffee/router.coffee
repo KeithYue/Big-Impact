@@ -33,8 +33,9 @@ class window.Router extends Backbone.Router
     fn()
   admin: page 'Admin'
   profile: (fellow_id) ->
+    console.log 'profile'
     fn = page 'Profile',
-      fellow_id:fellow_id
+      fellow_id: if fellow_id then fellow_id else window.model.fellow.get('fellow_id')
     fn()
   offerDetail: (offer_id) =>
     new window.View.OfferDetail offer_id

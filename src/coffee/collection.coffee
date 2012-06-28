@@ -77,3 +77,10 @@ class window.Collection.OfferList extends Backbone.Collection
       data:
         time_stamp: @last().attributes.created
       add: true
+
+class window.Collection.FellowList extends Backbone.Collection
+  model: window.Model.NormalFellow
+  initialize: (url)=>
+    @url = ->
+      url
+    @
