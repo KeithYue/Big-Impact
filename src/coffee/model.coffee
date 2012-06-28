@@ -33,16 +33,21 @@ class window.Model.Fellow extends Backbone.Model
   initialize: (callback) =>
     @fetch
       success: =>
-        $.cookie 'current_user', @attributes.url_token
+        $.cookie 'current_user', @attributes.fellow_id
         $.cookie 'first_name', @attributes.first_name
         $.cookie 'last_name', @attributes.last_name
-        callback()
+        callback?()
       error: =>
         console.log 'error'
-
+        
+class window.Model.NormalFellow extends Backbone.Model
+  urlRoot: '/fellow/'
+  idAttribute: 'url_token'
+  
+  
 # TODO: use session for auth
 class window.Model.Offer extends Backbone.Model
-  idAttribute: 'url_token'
+  idAttribute: 'offer_id'
   urlRoot: '/offer'
 
   # getter
@@ -50,4 +55,4 @@ class window.Model.Offer extends Backbone.Model
     date = new Date parseInt(@attributes.created + '000')
     "#{date.getFullYear()}-#{date.getMonth() + 1}-#{date.getDate()}"
   get_fullname: =>
-    "#{@attributes.member_first_name} #{@attributes.member_last_name}"
+    "#{@attributes.author_first_name} #{@attributes.author_last_name}"

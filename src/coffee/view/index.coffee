@@ -29,7 +29,7 @@ class window.View.Index extends Backbone.View
       email: $('input[name=email]').val()
       password: $('input[name=password]').val()
       auth: if @is_admin then '0' else '1'
-    $.ajax '/api/v1' + @urlRoot,
+    $.ajax '/api/v2' + @urlRoot,
       type: 'POST'
       data:
         json: JSON.stringify data
@@ -37,7 +37,9 @@ class window.View.Index extends Backbone.View
         if @is_admin
           router.navigate 'admin', true
         else
-          router.navigate 'profile', true
+            #建立当前用户
+          window.model.fellow = new Model.Fellow =>
+            router.navigate 'profile', true
         view.message.success 'Login success!'
       error: (xhr, status, error) =>
         console.log error

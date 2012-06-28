@@ -33,7 +33,7 @@ class window.View.OfferList extends Backbone.View
     false
 
   removeOffer: (event) =>
-    $offer = $(event.currentTarget).closest('.item')
+    $offer = @$(event.currentTarget).closest('.item')
     @offers.remove @offers.get($offer.data('id'))
 
   loadMore: (event) =>

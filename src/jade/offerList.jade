@@ -8,19 +8,20 @@
         button.btn.btn-primary.create(href="#") Create
     .list
       each offer in offers.models
-        .item(data-id="#{offer.attributes.url_token}")
+        .item(data-id="#{offer.attributes.offer_id}")
           .info.left
-            img(src="public/img/60.gif",alt='photo')
+            a.thumbnail(href="#profile/#{offer.attributes.author_id}")
+              img(src="public/img/60.gif",alt='photo')
             p.inf= offer.get_fullname()
               br
               | #{offer.get_friendly_time()}
            .offer.left
               .titlehd
-                if $.cookie('current_user') == offer.attributes.member_id
+                if $.cookie('current_user') == offer.attributes.author_id
                   .right.deleteButton
                     button.close ×
                 .title
-                  a(href="#activities/offer/#{offer.attributes.url_token}") #{offer.attributes.title}
+                  a(href="#activities/offer/#{offer.attributes.offer_id}") #{offer.attributes.title}
               .content
                 p.inf #{offer.attributes.description}
     //.add

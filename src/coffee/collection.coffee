@@ -57,7 +57,7 @@ class window.Collection.NavBar extends Backbone.Collection
 class window.Collection.OfferList extends Backbone.Collection
   model: window.Model.Offer
   url: ->
-    '/offer'
+    '/offers'
   initialize: (callback) =>
     @fetch
       success: =>

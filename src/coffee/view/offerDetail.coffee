@@ -3,7 +3,7 @@ class window.View.OfferDetail extends Backbone.View
   template: Template.offerDetail
   initialize: (offer_id) =>
     @offer = new Model.Offer
-      url_token: offer_id
+      offer_id: offer_id
     @offer.fetch
       success: =>
         @render()

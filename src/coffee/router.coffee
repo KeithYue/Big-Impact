@@ -20,6 +20,8 @@ class window.Router extends Backbone.Router
     'activities/:activity/:id': 'activities'
     'admin': 'admin'
     'profile': 'profile'
+    'profile/:fellow_id': 'profile'
+    'offers-recently': 'offers'
     'offers/:offer_id': 'offerDetail'
 
   #page 之间有依赖项，所以应依赖渲染
@@ -28,10 +30,11 @@ class window.Router extends Backbone.Router
     fn = page 'Activities',
       activity: activity
       id: id
-    ,->
-      ''
     fn()
   admin: page 'Admin'
-  profile: page 'Profile'
+  profile: (fellow_id) ->
+    fn = page 'Profile',
+      fellow_id:fellow_id
+    fn()
   offerDetail: (offer_id) =>
     new window.View.OfferDetail offer_id
