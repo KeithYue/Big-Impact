@@ -1,13 +1,13 @@
 h2 relationship
 h4
-  |#{I.get_frendly_name()} have followed #{attentions.length} people:
+  |#{fellow.get_frendly_name()} have followed #{attentions.length} people:
 ul.thumbnails
   each fellow in attentions.models
     li.span1
       a.thumbnail(href="#profile/#{fellow.attributes.fellow_id}")
         img(src="#{fellow.attributes.img}",title="#{fellow.get_frendly_name()}")
 h4
-  |#{followers.length} people have followed #{I.get_frendly_name()} :
+  |#{followers.length} people have followed #{fellow.get_frendly_name()} :
 ul.thumbnails
   each fellow in followers.models
     li.span1
@@ -16,7 +16,9 @@ ul.thumbnails
 
 .row
   p.span2.offset1#followButtonContainter
-    if followed
+    if fellow.get('fellow_id') == $.cookie('current_user')
+      | &nbsp; 
+    else if followed
       button.btn.btn-large#unfollow Unfollow
     else
       button.btn.btn-large.btn-primary#follow Follow

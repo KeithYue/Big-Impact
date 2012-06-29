@@ -8,7 +8,7 @@ class window.View.Relationship extends Backbone.View
     @$el.html @template
       attentions: @attentions
       followers: @followers
-      I:@fellow
+      fellow:@fellow
       followed:@followed
   initialize: (@fellow)=>
     @refresh_relation_information()
