@@ -16,7 +16,7 @@ class window.View.Relationship extends Backbone.View
   #events
   follow:=>
     $.ajax
-      url: "http://localhost/api/v2/followfellow/#{@fellow.get('fellow_id')}"
+      url: "/api/v2/followfellow/#{@fellow.get('fellow_id')}"
       type: 'POST'
       success: =>
         @refresh_relation_information()
@@ -24,7 +24,7 @@ class window.View.Relationship extends Backbone.View
         console.log 'error!!!'
   unfollow:=>
     $.ajax
-      url: "http://localhost/api/v2/followfellow/#{@fellow.get('fellow_id')}"
+      url: "/api/v2/followfellow/#{@fellow.get('fellow_id')}"
       type: 'DELETE'
       success: =>
         @refresh_relation_information()
