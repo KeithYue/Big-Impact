@@ -30,9 +30,9 @@
                 |&nbsp;People have followed the offer
               br
               if offer.get('is_followed_by_me')
-                button.btn Unfollow
+                button.btn.unfollow Unfollow
               else
-                button.btn.btn-success Follow
+                button.btn.btn-success.follow Follow
     //.add
       span.right
         a.more(href="#") More...

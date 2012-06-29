@@ -2,6 +2,12 @@ class window.View.OfferList extends Backbone.View
   template: Template.offerList
   el: '#feedsContent'
   initialize: =>
+    @get_offers_data()
+  render: =>
+    @$el.html @template
+      offers: @offers
+  #jobs
+  get_offers_data: ()=>
     @offers = window.collection.offerlist = new Collection.OfferList =>
       @offers.each (offer)=>
         #添加follow与本人的关系
@@ -24,17 +30,28 @@ class window.View.OfferList extends Backbone.View
         success: =>
           @render()
           console.log @offers.models, @offers.length
-          view.message.success 'Create offer success!'
-  render: =>
-    @$el.html @template
-      offers: @offers
-
+          view.message.success 'Create offer success!'    
   # events
   events:
     'click button.create': 'createOffer'
     'click button.close': 'removeOffer'
     'click a.more': 'loadMore'
-
+    'click .unfollow': 'unfollow'
+    'click .follow': 'follow'
+  unfollow: (event) =>
+    offer = @$(event.currentTarget).closest('.item')
+    $.ajax
+      url: "/api/v2/followoffer/#{offer.data('id')}"
+      type: 'DELETE'
+      success:(data,states,options) =>
+        @get_offers_data()
+  follow: (event) =>
+    offer = @$(event.currentTarget).closest('.item')
+    $.ajax
+      url: "/api/v2/followoffer/#{offer.data('id')}"
+      type: 'POST'
+      success:(data,states,options) =>
+        @get_offers_data()              
   createOffer: (event) =>
     view.modal.showOfferModal @offers
     false
