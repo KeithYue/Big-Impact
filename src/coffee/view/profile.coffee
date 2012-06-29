@@ -186,4 +186,9 @@ class window.View.ProfileOffer extends Backbone.View
   initialize: (@fellow)=>
     @render()
   render: ()=>
-    @$el.html @template()     
+    @$el.html @template()
+    @offerPublished = new View.ProfileOfferList 
+      el: '#published-offers'
+    @offerHeFollowed = new View.ProfileOfferList
+      el: '#followed-offers'    
+         

@@ -1,0 +1,35 @@
+.well
+  .inner
+    .head
+    .list
+      each offer in offers.models
+        .item(data-id="#{offer.attributes.offer_id}")
+          .info.left
+            a.thumbnail(href="#profile/#{offer.attributes.author_id}")
+              img(src="#{offer.authImg}",alt='photo')
+            p.inf= offer.get_fullname()
+              br
+              | #{offer.get_friendly_time()}
+           .offer.left
+              .titlehd
+                if $.cookie('current_user') == offer.attributes.author_id
+                  .right.deleteButton
+                    button.close ×
+                .title
+                  a(href="#activities/offer/#{offer.attributes.offer_id}") #{offer.attributes.title}
+              .content
+                p.inf #{offer.attributes.description}
+              address.pull-right
+                br
+                span.badge.badge-info #{offer.attributes.fellows.length}
+                |&nbsp;People have followed the offer
+              br
+              if $.cookie('current_user') == offer.attributes.author_id
+                | 
+              else if offer.get('is_followed_by_me')
+                button.btn.unfollow Unfollow
+              else
+                button.btn.btn-success.follow Follow
+    //.add
+      span.right
+        a.more(href="#") More...

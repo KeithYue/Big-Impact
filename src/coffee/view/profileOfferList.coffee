@@ -1,6 +1,5 @@
-class window.View.OfferList extends Backbone.View
-  template: Template.offerList
-  el: '#feedsContent'
+class window.View.ProfileOfferList extends Backbone.View
+  template: Template.profileOfferList
   initialize: ()=>
     @get_offers_data()
   render: =>
