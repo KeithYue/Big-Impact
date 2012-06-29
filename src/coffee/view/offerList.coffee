@@ -5,7 +5,8 @@ class window.View.OfferList extends Backbone.View
     @offers = window.collection.offerlist = new Collection.OfferList =>
       @offers.each (offer)=>
         offer.get_author_img =>
-          @render()
+          #如果全部加载完毕就渲染
+           @render()
     @offers.on 'remove', (offer, offers) =>
       offer.destroy
         success: =>

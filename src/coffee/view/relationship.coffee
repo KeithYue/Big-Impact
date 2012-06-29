@@ -52,7 +52,6 @@ class window.View.Relationship extends Backbone.View
     @followers.fetch 
       success: =>
         @followed = @is_followedByMe()
-        console.log @followed
         @render()
       error: =>
         console.log 'error!!'

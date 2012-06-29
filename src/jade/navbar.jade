@@ -8,11 +8,11 @@ if model.fellow
   ul.nav.pull-right
     li.user.dropdown
       a.dropdown-toggle(href="#",data-toggle="dropdown")
-        | name
+        | #{window.model.fellow.get('first_name')}
         b.caret
       ul.dropdown-menu
         li
-          a(href="#")
+          a(href="#profile")
             i.icon-user
             | &nbsp;Profile
         li.divider

@@ -30,7 +30,7 @@ class window.Model.NavBarItem extends Backbone.Model
 class window.Model.Fellow extends Backbone.Model
   urlRoot: '/fellow/'
   idAttribute: 'fellow_id'
-  initialize: (callback) =>
+  initialize: (data...,callback) =>
     @fetch
       success: =>
         $.cookie 'current_user', @attributes.fellow_id
