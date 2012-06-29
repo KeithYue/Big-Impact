@@ -1,8 +1,7 @@
 class window.View.OfferList extends Backbone.View
   template: Template.offerList
   el: '#feedsContent'
-  initialize: =>
-    console.log 'navi'
+  initialize: (el)=>
     @get_offers_data()
   render: =>
     @$el.html @template

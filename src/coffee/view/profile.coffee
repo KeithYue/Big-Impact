@@ -141,6 +141,7 @@ class window.View.Profile extends Backbone.View
   el: '#content'
   events: 
     'click #offersLink': 'showProfileOffers'
+    'click #infoLink': 'showInfo'
   initialize: (options)=>
     if options.fellow_id
       @model = new Model.NormalFellow
@@ -151,9 +152,8 @@ class window.View.Profile extends Backbone.View
   template: Template.profile
   render: =>
     @$el.html @template @model.toJSON() 
-    @basicProfile = new View.BasicProfile @model
-    @contactProfile = new View.ContactProfile @model
-    @organizationProfile = new View.OrganizationProfile @model
+    #默认刷新的是information页面
+    @information = new View.infoContainer @model
     @relationShip = new View.Relationship @model
     @
   #events
@@ -162,7 +162,24 @@ class window.View.Profile extends Backbone.View
     event.stopPropagation()
     @profileOffer = new View.ProfileOffer
     console.log 'time to show offers'
+  showInfo: (event)=>
+    event.preventDefault()
+    event.stopPropagation()
+    console.log 'infotmation'
+    @information.render()
+    
+class window.View.infoContainer extends Backbone.View
+  el: '#profileContent'    
+  template: Template.infoContainer
+  initialize: (@fellow)=>
+    @render()
+  render: ()=>
+    @$el.html @template()
+    @basicProfile = new View.BasicProfile @fellow
+    @contactProfile = new View.ContactProfile @fellow
+    @organizationProfile = new View.OrganizationProfile @fellow    
 
+        
 class window.View.ProfileOffer extends Backbone.View
   el: '#profileContent'
   template: Template.profileOffer
