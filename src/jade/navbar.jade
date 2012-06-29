@@ -1,15 +1,26 @@
-each item, i in items
-  if item.is_show()
-    li(class="#{item.is_active() ? 'active' : ''}")
-      a(href="##{item.get_name()}")= item.upperName()
-//li.dropdown
-  a.dropdown-toggle(href="#",data-toggle="dropdown")
-    |Create
-    b.caret
-  ul.dropdown-menu
-    li
-      a(href="#") Need
-    li
-      a#createOffer Offer
-    li
-      a(href="#") Activity
+ul.nav.main
+  each item, i in items
+    if item.is_show()
+      li(class="#{item.is_active() ? 'active' : ''}")
+        a(href="##{item.get_name()}")= item.upperName()
+
+if model.fellow
+  ul.nav.pull-right
+    li.user.dropdown
+      a.dropdown-toggle(href="#",data-toggle="dropdown")
+        | name
+        b.caret
+      ul.dropdown-menu
+        li
+          a(href="#")
+            i.icon-user
+            | &nbsp;Profile
+        li.divider
+        li
+          a(href="#")
+            i.icon-pencil
+            | &nbsp;Reset password
+        li
+          a(href="#logout")
+            i.icon-off
+            | &nbsp;Log out

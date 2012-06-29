@@ -1,5 +1,5 @@
 class window.View.NavBar extends Backbone.View
-  el: 'ul.nav'
+  el: '#main-nav'
   events:
     'click #createOffer': 'createOffer'
   initialize: (@collection) =>
