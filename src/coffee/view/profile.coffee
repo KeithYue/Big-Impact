@@ -139,6 +139,8 @@ class window.View.OrganizationProfile extends Backbone.View
 
 class window.View.Profile extends Backbone.View
   el: '#content'
+  events: 
+    'click #offersLink': 'showProfileOffers'
   initialize: (options)=>
     if options.fellow_id
       @model = new Model.NormalFellow
@@ -154,3 +156,17 @@ class window.View.Profile extends Backbone.View
     @organizationProfile = new View.OrganizationProfile @model
     @relationShip = new View.Relationship @model
     @
+  #events
+  showProfileOffers: (event)=>
+    event.preventDefault()
+    event.stopPropagation()
+    @profileOffer = new View.ProfileOffer
+    console.log 'time to show offers'
+
+class window.View.ProfileOffer extends Backbone.View
+  el: '#profileContent'
+  template: Template.profileOffer
+  initialize: (@fellow)=>
+    @render()
+  render: ()=>
+    @$el.html @template()     

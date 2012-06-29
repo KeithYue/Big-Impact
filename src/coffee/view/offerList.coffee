@@ -2,6 +2,7 @@ class window.View.OfferList extends Backbone.View
   template: Template.offerList
   el: '#feedsContent'
   initialize: =>
+    console.log 'navi'
     @get_offers_data()
   render: =>
     @$el.html @template
@@ -56,6 +57,7 @@ class window.View.OfferList extends Backbone.View
         @get_offers_data()              
   createOffer: (event) =>
     view.modal.showOfferModal @offers
+    @get_offers_data() 
     false
 
   removeOffer: (event) =>

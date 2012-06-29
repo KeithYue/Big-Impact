@@ -23,6 +23,8 @@ class window.View.CreateOfferModal extends Backbone.View
       success: (model, response)=>
         @undelegateEvents()
         @$('#createOfferModal').modal('hide')
+        #刷新页面
+        window.location.reload()
       error: (model, response)=>
         console.log 'error'
     false
