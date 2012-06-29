@@ -1,14 +1,4 @@
 $ ->
-  if $.cookie 'current_user'
-    window.model.fellow = new Model.Fellow
-      fellow_id: $.cookie('current_user')
-    ,
-      ->
-        init_app()
-  else
-    init_app()
-        
-
   init_app = =>
     Backbone.emulateJSON = true
     window.view.layout = new View.Layout
@@ -17,4 +7,12 @@ $ ->
   
     window.reset = (callback) ->
       $.post '/api/v2/reset', ->
-        callback?()    
+        callback?()   
+  if $.cookie 'current_user'
+    window.model.fellow = new Model.Fellow
+      fellow_id: $.cookie('current_user')
+    ,
+      ->
+        init_app()
+  else
+    init_app()

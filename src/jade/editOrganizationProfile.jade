@@ -1,0 +1,66 @@
+form.form-horizontal
+  fieldset
+    h3 Eidt Organization Information
+    .control-group
+      label.control-label2(for='organization_name') Organization Name:
+      .controls1
+        input.input-large(name="organization_name",type='text',value="#{organization_name}")
+    .control-group
+      label.control-label2(for='organization_acronym') Organization Acronym:
+      .controls1
+        input.input-large(name="organization_acronym",type='text',value="#{organization_acronym}")
+    .control-group
+      label.control-label2(for='date_organization_formed') Date organization formed:
+      .controls1
+        input.input-large(name="date_organization_formed",type='text',value="#{date_organization_formed}")
+    .control-group
+      label.control-label2(for='organization_website_url') Organization Website URL:
+      .controls1
+        input.input-large(name="organization_website_url",type='text',value="#{organization_website_url}")
+    .control-group
+      label.control-label2(for='organization_type') Organization Type:
+      .controls1
+        select.span3(name="organization_type",type="text",value="#{organization_type}")
+          option
+          option Private sector
+          option Government Agency
+          option Multilateral Organization
+    .control-group
+      label.control-label2(for='number_of_employees') Number of employees:
+      .controls1
+        select.span3(name="number_of_employees",type="text",value="#{number_of_employees}")
+          option 
+          option less than 10
+          option 11-25
+          option 26-40
+          option 41-60
+          option 61-80
+          option 81-100
+          option 101-150
+          option 151-200
+          option more than 200
+    .control-group
+      label.control-label2(for='organization_estimated_annual_budget') Estimated annual budget:
+      .controls1
+        select.span3(name="organization_estimated_annual_budget",type="text",value="#{organization_estimated_annual_budget}")
+          option 
+          option less than $50,000
+          option $50,000- $100,000
+          option $100,000-$200,000
+          option $200,000-$500,000
+          option $500,000- $1,000,000
+          option $1,000,000- $5,000,000
+          option $5,000,000- $10,000,000
+          option more than $10,000,000     
+    .control-group
+      label.control-label2(for='organization_phone_number_country_code') Country Code:
+      .controls1
+        input.input-large(name="organization_phone_number_country_code",type="text",value="#{organization_phone_number_country_code}") 
+    .control-group
+      label.control-label2(for='organization_phone_number') Phone Number:
+      .controls1
+        input.input-large(name="organization_phone_number",type="text",value="#{organization_phone_number}")
+    div.form-actions
+      button.btn.btn-primary.save Save changes
+      |&nbsp;&nbsp;
+      button.btn.cancel Cancel

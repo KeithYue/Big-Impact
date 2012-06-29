@@ -29,7 +29,9 @@
                 span.badge.badge-info #{offer.attributes.fellows.length}
                 |&nbsp;People have followed the offer
               br
-              if offer.get('is_followed_by_me')
+              if $.cookie('current_user') == offer.attributes.author_id
+                | 
+              else if offer.get('is_followed_by_me')
                 button.btn.unfollow Unfollow
               else
                 button.btn.btn-success.follow Follow

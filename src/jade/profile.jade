@@ -1,8 +1,16 @@
 .row
-  div.span8
+  .span4
+    .well
+      .row
+        .span
+          a(href="#")
+            img(src="#{window.model.fellow.attributes.img}")
+          strong
+            |#{window.model.fellow.attributes.first_name}
+    #relationshipBlock
+  .span8
     #basic-profile
     #contact-info
     #organization-info
-  div.span4
-    #relationshipBlock
+
       

@@ -44,6 +44,7 @@ class window.View.OfferList extends Backbone.View
       url: "/api/v2/followoffer/#{offer.data('id')}"
       type: 'DELETE'
       success:(data,states,options) =>
+        view.message.success 'unfollow this offer success'
         @get_offers_data()
   follow: (event) =>
     offer = @$(event.currentTarget).closest('.item')
@@ -51,6 +52,7 @@ class window.View.OfferList extends Backbone.View
       url: "/api/v2/followoffer/#{offer.data('id')}"
       type: 'POST'
       success:(data,states,options) =>
+        view.message.success 'follow this offer success'
         @get_offers_data()              
   createOffer: (event) =>
     view.modal.showOfferModal @offers
