@@ -2,62 +2,53 @@ h3 Organization information
 table.table.table-condensed.table-striped
   thead.span8
     tr
-      td
-      td
-      td
-        a.edit(href="#") Edit
-      td
+      td.span3
+      td.span2
+      td.span2
+        if fellow_id == window.model.fellow.attributes.fellow_id
+          a.edit(href="#") Edit
   tbody
     tr
-      th
+      th.span3
         | Organization Name
-      td
-      td=organization_name 
-      td
+      td.span2
+      td.span2=organization_name 
     tr 
-      th
+      th.span3
         | Organization Acronym
-      td
-      td=organization_acronym 
-      td
+      td.span2
+      td.span2=organization_acronym 
     tr
-      th
+      th.span3
         | Date organization formed
-      td 
-      td=date_organization_formed 
-      td
+      td.span2
+      td.span2=date_organization_formed 
     tr
-      th
+      th.span3
         | Organization Website URL
-      td
-      td=organization_website_url 
-      td
+      td.span2
+      td.span2=organization_website_url 
     tr
-      th
+      th.span3
         | Organization Type
-      td
-      td=organization_type 
-      td
+      td.span2
+      td.span2=organization_type 
     tr
-      th
+      th.span3
         | Number of employees
-      td
-      td=number_of_employees 
-      td
+      td.span2
+      td.span2=number_of_employees 
     tr
-      th Estimated annual budget
-      td
-      td=organization_estimated_annual_budget   
-      td  
+      th.span3 Estimated annual budget
+      td.span2
+      td.span2=organization_estimated_annual_budget   
     tr
-      th
+      th.span3
         | Country Code
-      td
-      td=organization_phone_number_country_code  
-      td   
+      td.span2
+      td.span2=organization_phone_number_country_code  
     tr
-      th
+      th.span3
         | Phone Number
-      td
-      td=organization_phone_number 
-      td
+      td.span2
+      td.span2=organization_phone_number 

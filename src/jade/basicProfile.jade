@@ -2,32 +2,40 @@ h3 Basic Information
 table.table.table-condensed.table-striped
   thead
     tr
-      td
-      td
+      td.span3
+      td.span2
+      td.span2
         if fellow_id == window.model.fellow.attributes.fellow_id
           a.edit(href="#") Edit
   tbody
     tr
-      th First Name
-      td= first_name
+      th.span3 First Name
+      td.span2
+      td.span2= first_name
     tr
-      th Last Name
-      td= last_name
+      th.span3 Last Name
+      td.span2
+      td.span2= last_name
     tr
-      th Gender
+      th.span3 Gender
+      td.span2
       - if (gender == 1)
-        td male
+        td.span2 male
       - else
-        td female
+        td.span2 female
     tr
-      th Lauguages
-      td= language
+      th.span3 Lauguages
+      td.span2
+      td.span2= language
     tr
-      th Fields of Work
-      td= job
+      th.span3 Fields of Work
+      td.span2
+      td.span2= job
     tr
-      th Locations of work
-      td= location
+      th.span3 Locations of work
+      td.span2
+      td.span2= location
     tr
-      th Target Populations
-      td= target
+      th.span3 Target Populations
+      td.span2
+      td.span2= target

@@ -2,26 +2,26 @@ h3 Contact Information
 table.table.table-condensed.table-striped
   thead.span8
     tr
-      td
-      td
-      td
-      td
+      td.span3
+      td.span2
+      td.span2
         if fellow_id == window.model.fellow.attributes.fellow_id
           a.edit(href="#") Edit
   tbody
     tr
-      th Country code
-      td
-      td
-      td= mobile_country_code
+      th.span3 Country code
+      td.span2
+      td.span2= mobile_country_code
     tr
-      th Mobile phone
-      td
-      td
-      td= mobile
+      th.span3 Mobile phone
+      td.span2
+      td.span2= mobile
     tr
-      th Mail(Home)
-      td
+      th.span3 Mail
+      td.span2
+        .bold
+          |Home
+        br
         | #{home_street}
         br
         | #{home_city} 
@@ -31,8 +31,8 @@ table.table.table-condensed.table-striped
         | #{home_country} 
         br
         | #{home_zip}
-      th Mail(Business)
-      td 
+      td.span2
+        .bold Business
         | #{business_street} 
         br
         | #{business_city}
@@ -43,7 +43,6 @@ table.table.table-condensed.table-striped
         br
         | #{business_zip}
     tr
-      th Skype ID
-      td
-      td
-      td= skype_id
+      th.span3 Skype ID
+      td.span2
+      td.span2= skype_id

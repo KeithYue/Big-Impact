@@ -1,22 +1,22 @@
 form.form-horizontal
   fieldset
     h3 Eidt Organization Information
-    .control-group
+    .control-group.border
       label.control-label2(for='organization_name') Organization Name:
       .controls1
-        input.input-large(name="organization_name",type='text',value="#{organization_name}")
+        input.input-large.span3(name="organization_name",type='text',value="#{organization_name}")
     .control-group
       label.control-label2(for='organization_acronym') Organization Acronym:
       .controls1
-        input.input-large(name="organization_acronym",type='text',value="#{organization_acronym}")
+        input.input-large.span3(name="organization_acronym",type='text',value="#{organization_acronym}")
     .control-group
       label.control-label2(for='date_organization_formed') Date organization formed:
       .controls1
-        input.input-large(name="date_organization_formed",type='text',value="#{date_organization_formed}")
-    .control-group
+        input.input-large.span3(name="date_organization_formed",type='text',value="#{date_organization_formed}")
+    .control-group.border
       label.control-label2(for='organization_website_url') Organization Website URL:
       .controls1
-        input.input-large(name="organization_website_url",type='text',value="#{organization_website_url}")
+        input.input-large.span3(name="organization_website_url",type='text',value="#{organization_website_url}")
     .control-group
       label.control-label2(for='organization_type') Organization Type:
       .controls1
@@ -52,14 +52,14 @@ form.form-horizontal
           option $1,000,000- $5,000,000
           option $5,000,000- $10,000,000
           option more than $10,000,000     
-    .control-group
+    .control-group.border
       label.control-label2(for='organization_phone_number_country_code') Country Code:
       .controls1
-        input.input-large(name="organization_phone_number_country_code",type="text",value="#{organization_phone_number_country_code}") 
+        input.input-large.span3(name="organization_phone_number_country_code",type="text",value="#{organization_phone_number_country_code}") 
     .control-group
       label.control-label2(for='organization_phone_number') Phone Number:
       .controls1
-        input.input-large(name="organization_phone_number",type="text",value="#{organization_phone_number}")
+        input.input-large.span3(name="organization_phone_number",type="text",value="#{organization_phone_number}")
     div.form-actions
       button.btn.btn-primary.save Save changes
       |&nbsp;&nbsp;

@@ -1,13 +1,14 @@
 form.form-horizontal
   fieldest
+    h3 Edit Contact Information
     .row.border
       div.span4.control-group
         label.editContactControlLabel(for="mobile_country_code") Country code:
-        div.controls
+        div.controlss
           input.span2.input-xlarge(name="mobile_country_code",type="text",value="#{mobile_country_code}")
       div.span4.control-group
         label.editContactControlLabel(for="mobile") Mobile:
-        div.controls
+        div.controlss
           input.span2.input-xlarge(name="mobile",type="text",value="#{mobile}")
     .row.border
       div.span4
@@ -15,59 +16,70 @@ form.form-horizontal
         br
         div.control-group
           label.editContactControlLabel(for="home_country") Country:
-          div.controls
-            select.span2(name="home_country",type="text")
-              option 1
+          div.controlss
+            select.span2(name="home_country",type="text",value="#{home_country}")
+              -var countrys = ["","America"]
+              each country in countrys
+                option=country
         div.control-group
-          label.editContactControlLabel(for="home_state") Province:
-          div.controls
-            select.span2(name="home_state",type="text")
-              option 1
+          label.editContactControlLabel(for="home_state") State:
+          div.controlss
+            select.span2(name="home_state",type="text",value="#{home_state}")
+              -var states = ["","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
+              each state in states
+                option=state
         div.control-group
           label.editContactControlLabel(for="home_city") City:
-          div.controls
-            select.span2(name="home_city",type="text")
-              option 1
+          div.controlss
+            select.span2(name="home_city",type="text",value="#{home_city}")
+              -var cities=["","LosAngeles","Hollywood","Alhambra","Anaheim","BeverleyHills","BigBearCity","Compton","CostaMesa","Malibu","Malibu","MarinadelRey","MontereyPark","Pasadena","Pomona","Riverside","Rosemead","SanBernardino","SanFernandoValley","SanGabriel","SantaAna","SantaMonica","Torrance","SanFrancisco","Oakland","RedwoodCity","Fremont","Cupertino","SanJosé","Bakersfield","Eureka","Fresno","LakeTahoe","Reddings","Sacramento","SanDiego","Stockton","Ukiah",]
+              each city in cities
+                option=city
         div.control-group
           label.editContactControlLabel(for="home_street") Street:
-          div.controls
-            input.span2.input-xlarge(name="home_street", type="text")
+          div.controlss
+            input.span2.input-xlarge(name="home_street", type="text",value="#{home_street}")
         div.control-group
           label.editContactControlLabel(for="home_zip") Postal Code:
-          div.controls
-            input.span2.input-xlarge(name="home_zip", type="text")
+          div.controlss
+            input.span2.input-xlarge(name="home_zip", type="text",value="#{home_zip}")
       div.span4
         div.center Mail(Business)
         br
         div.control-group
           label.editContactControlLabel(for="business_country") Country:
-          div.controls
-            select.span2(name="business_country",type="text")
-              option 1
+          div.controlss
+            select.span2(name="business_country",type="text",value="#{business_country}")
+              -var countrys = ["","America"]
+              each country in countrys
+                option=country
         div.control-group
-          label.editContactControlLabel(for="business_state") Province:
-          div.controls
-            select.span2(name="business_state",type="text")
-              option 1
+          label.editContactControlLabel(for="business_state") State:
+          div.controlss
+            select.span2(name="business_state",type="text",value="#{business_state}")
+              -var states = ["","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
+              each state in states
+                option=state
         div.control-group
           label.editContactControlLabel(for="business_city") City:
-          div.controls
-            select.span2(name="home_city",type="text")
-              option 1
+          div.controlss
+            select.span2(name="business_city",type="text",value="#{business_city}")
+              -var cities=["","LosAngeles","Hollywood","Alhambra","Anaheim","BeverleyHills","BigBearCity","Compton","CostaMesa","Malibu","Malibu","MarinadelRey","MontereyPark","Pasadena","Pomona","Riverside","Rosemead","SanBernardino","SanFernandoValley","SanGabriel","SantaAna","SantaMonica","Torrance","SanFrancisco","Oakland","RedwoodCity","Fremont","Cupertino","SanJosé","Bakersfield","Eureka","Fresno","LakeTahoe","Reddings","Sacramento","SanDiego","Stockton","Ukiah",]
+              each city in cities
+                option=city
         div.control-group
           label.editContactControlLabel(for="business_street") Street:
-          div.controls
-            input.span2.input-xlarge(name="business_street", type="text")
+          div.controlss
+            input.span2.input-xlarge(name="business_street", type="text",value="#{business_street}")
         div.control-group
           label.editContactControlLabel(for="business_zip") Postal Code:
-          div.controls
-            input.span2.input-xlarge(name="business_zip", type="text")  
+          div.controlss
+            input.span2.input-xlarge(name="business_zip", type="text",value="#{business_zip}")  
     div.control-group.border
       label.editContactControlLabel(for="skype_id") Skype ID:
-      div.controls
-        input.span2.input-xlarge(name="skype_id", type="text")
+      div.controlss
+        input.span2.input-xlarge(name="skype_id", type="text",value="#{skype_id}")
     div.form-actions
       button.btn.btn-primary.save Save changes
       |&nbsp;&nbsp;
       button.btn.cancel Cancel
-

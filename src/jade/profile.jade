@@ -1,12 +1,17 @@
 .row
   .span4
     .well
-      .row
-        .span
-          a(href="#")
-            img(src="#{window.model.fellow.attributes.img}")
-          strong
-            |#{window.model.fellow.attributes.first_name}
+      div
+        a(href="#")
+          img(src="#{window.model.fellow.attributes.img}")
+        .h2.nameRight
+          |#{window.model.fellow.attributes.first_name}
+    .wellWithoutBorder
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a(href="#") Offers
+        li
+          a(href="#") Information
     #relationshipBlock
   .span8
     #basic-profile

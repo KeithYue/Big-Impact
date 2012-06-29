@@ -1,18 +1,28 @@
 .hero-unit
-  h2= title
-  p= description
+  h2= offer.title
+  p= offer.description
   address
     strong
       |fields:&nbsp;&nbsp;
-    span.label= fields
+    span.label= offer.fields
     br
   address
     strong
       |location:&nbsp;&nbsp;
     br
-    | #{locations}
+    | #{offer.locations}
     br
   address
     strong
       |target:&nbsp;&nbsp;
-    span.label.label-info= target
+    span.label.label-info= offer.target
+  address
+    strong
+      |followers:&nbsp;&nbsp;
+    br
+    ul.thumbnails
+      each follower in followers
+        li.span1
+          a.thumbnail(href="#profile/#{follower.fellow_id}")
+            img(src="#{follower.img}",alt="",title="#{follower.first_name} #{follower.last_name}")
+    

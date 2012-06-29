@@ -1,12 +1,12 @@
-h1 relationship
-h3
+h2 relationship
+h4
   |#{I.get_frendly_name()} have followed #{attentions.length} people:
 ul.thumbnails
   each fellow in attentions.models
     li.span1
       a.thumbnail(href="#profile/#{fellow.attributes.fellow_id}")
         img(src="#{fellow.attributes.img}",title="#{fellow.get_frendly_name()}")
-h3
+h4
   |#{followers.length} people have followed #{I.get_frendly_name()} :
 ul.thumbnails
   each fellow in followers.models
