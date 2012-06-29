@@ -4,9 +4,13 @@ class window.View.OfferList extends Backbone.View
   initialize: =>
     @offers = window.collection.offerlist = new Collection.OfferList =>
       @offers.each (offer)=>
+        #添加follow与本人的关系
+        offer.set
+          is_followed_by_me: offer.is_followed_by_me()
+        ,
+          silent:true
         offer.get_author_img =>
-          #如果全部加载完毕就渲染
-           @render()
+          @render()
     @offers.on 'remove', (offer, offers) =>
       offer.destroy
         success: =>

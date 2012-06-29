@@ -70,3 +70,10 @@ class window.Model.Offer extends Backbone.Model
         #默认图片
         @authImg='http://www.gravatar.com/avatar/c53c03a085128f11f90ec17f84c88c15'
         callback?()
+  is_followed_by_me:()->
+    is_followed_by_me = false
+    for follow in @get('fellows')
+      if follow.fellow_id is window.model.fellow.get('fellow_id')
+        is_followed_by_me = true
+    is_followed_by_me
+    

@@ -24,7 +24,15 @@
                   a(href="#activities/offer/#{offer.attributes.offer_id}") #{offer.attributes.title}
               .content
                 p.inf #{offer.attributes.description}
-              address#followNumMessage
+              address.pull-right
+                br
+                span.badge.badge-info #{offer.attributes.fellows.length}
+                |&nbsp;People have followed the offer
+              br
+              if offer.get('is_followed_by_me')
+                button.btn Unfollow
+              else
+                button.btn.btn-success Follow
     //.add
       span.right
         a.more(href="#") More...
