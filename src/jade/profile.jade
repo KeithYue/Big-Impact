@@ -3,9 +3,9 @@
     .well
       div
         a(href="#")
-          img(src="#{window.model.fellow.attributes.img}")
+          img(src="#{img}", data-name="#{first_name}")
         .h2.nameRight
-          |#{window.model.fellow.attributes.first_name}
+          | #{first_name}
     .wellWithoutBorder
       ul.nav.nav-tabs.nav-stacked
         li

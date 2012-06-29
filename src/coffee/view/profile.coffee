@@ -148,7 +148,7 @@ class window.View.Profile extends Backbone.View
           @render()
   template: Template.profile
   render: =>
-    @$el.html @template()
+    @$el.html @template @model.toJSON() 
     @basicProfile = new View.BasicProfile @model
     @contactProfile = new View.ContactProfile @model
     @organizationProfile = new View.OrganizationProfile @model
