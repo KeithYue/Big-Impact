@@ -187,10 +187,10 @@ class window.View.ProfileOffer extends Backbone.View
   initialize: (@fellow)=>
     @render()
   render: ()=>
-    @$el.html @template()
+    @$el.html @template(@fellow.toJSON())
     @offerPublished = new View.ProfileOfferList 
       el: '#published-offers'
-      url: "/myfollowoffers/#{@fellow.get('fellow_id')}"
+      url: "/myoffers/#{@fellow.get('fellow_id')}"
     @offerHeFollowed = new View.ProfileOfferList
       el: '#followed-offers'    
       url: "/myfollowoffers/#{@fellow.get('fellow_id')}"

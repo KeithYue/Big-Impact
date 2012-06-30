@@ -1,8 +1,6 @@
 ul.nav.nav-tabs
-  li.active: a(href="#published-offers",data-toggle="tab") Offers I Published
-  li: a(href="#followed-offers",data-toggle="tab") Offers I Followed
+  li.active: a(href="#published-offers",data-toggle="tab") Offers #{first_name} Published
+  li: a(href="#followed-offers",data-toggle="tab") Offers #{first_name} Followed
 div.tab-content
   div.tab-pane.active#published-offers
-    |publish
   div.tab-pane#followed-offers
-    |followed
