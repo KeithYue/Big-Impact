@@ -1,13 +1,15 @@
 class window.View.ProfileOfferList extends Backbone.View
   template: Template.profileOfferList
-  initialize: ()=>
-    @get_offers_data()
+  initialize: (data)=>
+    @get_offers_data(data)
   render: =>
+    console.log 'profile offer list is rendering'
+    console.log @offers
     @$el.html @template
       offers: @offers
   #jobs
-  get_offers_data: ()=>
-    @offers = window.collection.offerlist = new Collection.OfferList =>
+  get_offers_data: (data)=>
+    @offers = window.collection.offerlist = new Collection.OfferList({url: data.url}, =>
       @offers.each (offer)=>
         #添加follow与本人的关系
         offer.set
@@ -16,6 +18,7 @@ class window.View.ProfileOfferList extends Backbone.View
           silent:true
         offer.get_author_img =>
           @render()
+    )
     @offers.on 'remove', (offer, offers) =>
       offer.destroy
         success: =>

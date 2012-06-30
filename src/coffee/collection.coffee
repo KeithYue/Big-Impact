@@ -58,10 +58,16 @@ class window.Collection.OfferList extends Backbone.Collection
   model: window.Model.Offer
   url: ->
     '/offers'
-  initialize: (callback) =>
+  initialize: (data...,callback) =>
+    console.log data
+    console.log callback
+    if data.length isnt 0
+      @url = -> 
+        data[0].url
+    console.log @url()
     @fetch
       success: =>
-        callback()
+        callback?()
       error: =>
         console.log 'error'
 

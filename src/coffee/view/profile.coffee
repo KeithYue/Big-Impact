@@ -160,7 +160,7 @@ class window.View.Profile extends Backbone.View
   showProfileOffers: (event)=>
     event.preventDefault()
     event.stopPropagation()
-    @profileOffer = new View.ProfileOffer
+    @profileOffer = new View.ProfileOffer @model
     console.log 'time to show offers'
   showInfo: (event)=>
     event.preventDefault()
@@ -172,6 +172,7 @@ class window.View.infoContainer extends Backbone.View
   el: '#profileContent'    
   template: Template.infoContainer
   initialize: (@fellow)=>
+    console.log @fellow
     @render()
   render: ()=>
     @$el.html @template()
@@ -189,6 +190,8 @@ class window.View.ProfileOffer extends Backbone.View
     @$el.html @template()
     @offerPublished = new View.ProfileOfferList 
       el: '#published-offers'
+      url: "/myfollowoffers/#{@fellow.get('fellow_id')}"
     @offerHeFollowed = new View.ProfileOfferList
       el: '#followed-offers'    
+      url: "/myfollowoffers/#{@fellow.get('fellow_id')}"
          
