@@ -8,6 +8,7 @@ $ ->
     window.reset = (callback) ->
       $.post '/api/v2/reset', ->
         callback?()   
+        
   if $.cookie 'current_user'
     window.model.fellow = new Model.Fellow
       fellow_id: $.cookie('current_user')
