@@ -28,7 +28,7 @@ class window.View.Admin extends Backbone.View
       email: @$('input[name=email]').val()
       first_name: @$('input[name=first_name]').val()
       last_name: @$('input[name=last_name]').val()
-    url = '/api/v1'
+    url = '/api/v2'
     if @is_admin
       url += @adminUrl
     else
